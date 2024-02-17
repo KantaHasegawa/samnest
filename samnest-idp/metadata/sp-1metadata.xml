@@ -1,0 +1,20 @@
+<EntityDescriptor
+ xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+ xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+ xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ entityID="http://localhost:4002/sso/metadata">
+    <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <KeyDescriptor use="encryption">
+            <KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <X509Data>
+                    <X509Certificate>MIIDazCCAlOgAwIBAgIUVDdDfPtP1NWkBt0dVnymYL03EA0wDQYJKoZIhvcNAQELBQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAeFw0yNDAyMTYxNTE3NTJaFw0yNTAyMTUxNTE3NTJaMEUxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDbdtlvqcUiqZWVJwa896iODa9TSsU9hD/oCnOY132FGY17nrEhj4Uo2wSucwG2INTEZbIxX0qhGiK3XBaJKspzIns8MGzCjoR04HgBQHLcTTAdPnB04PoTqLly20+p88Sk6JCU1N9VCkBtdqDfe1HZ8OrQ2O82sgnlZ/sN6s609eeZ2vnaPTa/e6+V3+tlWL9W7y83JJugZ6n4m9HcsposhwkNi8+huE00idiMxgWdKKUDAGBennPOPBHrTP+gO59BH+hxwi2n5EnTdAsj9zXMAYXVG3h+ANNizxPCeFpIsCzWSwOBJZj3cBBGC0KQdPUupojNDRMXhF94MSwqlV4JAgMBAAGjUzBRMB0GA1UdDgQWBBQyAwPIemovNQCUy4GwVZvxsWGCDjAfBgNVHSMEGDAWgBQyAwPIemovNQCUy4GwVZvxsWGCDjAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBY1bWWdpk6GWjQxzlPJlWWyDBiSeD/Mp/4HH80UFgy16OiRywn2M0FGKBh9+g8JSRW5zGikQnsfuH5GGnRfRB4zsCSeGoBoSEzinIk2zAb1FQ2HBoVzjV7DTFXq2H4doNSEmv8LHLmY6UqMg6VNzwj2KFBO9AlF+KuKjba2QY+7ZqT1s0ojSNxUFqWxmRtBRdzxWFCi11fitRSzeXJnYdTFsOyYPUGANZz8HgcFyQgH2H04734JV3FIdiwPZ1uR19PfTaRR19hStGpoKRzW1bWYCqrTla3Ay9aIV1WLu77R3atblNXLRjNz6kIJQSyrwuGtoqzPhO2isiHr012W2Vq</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </KeyDescriptor>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:4002/sso/slo" />
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:4002/sso/slo" />
+        <AssertionConsumerService isDefault="true" index="0" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:4002/sso/acs"/>
+        <AssertionConsumerService index="1" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:4002/sso/acs"/>
+    </SPSSODescriptor>
+</EntityDescriptor>
