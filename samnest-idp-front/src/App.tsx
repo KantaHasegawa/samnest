@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import xmlFormat from "xml-formatter";
 import { CopyBlock, atomOneLight } from "react-code-blocks";
 
-interface LoginResponse {
+export interface LoginResponse {
   token: string;
   user: {
     id: number;
@@ -12,7 +12,7 @@ interface LoginResponse {
   };
 }
 
-interface SamlResponse {
+export interface SamlResponse {
   result: {
     id: string;
     context: string;
@@ -21,7 +21,7 @@ interface SamlResponse {
   };
 }
 
-interface ServiceProvider {
+export interface ServiceProvider {
   id: number;
   name: string;
   entityID: string;
@@ -95,7 +95,10 @@ function App() {
 
   return (
     <>
-      <h1>SAMLテストアプリケーション</h1>
+      <head>
+        <title>認証基盤</title>
+      </head>
+      <h1>SAMLテスト 認証基盤</h1>
       {!token ? (
         <>
           <div>
@@ -110,14 +113,14 @@ function App() {
             />
           </div>
           <button type="button" onClick={handleSubmit}>
-            Login
+            ログイン
           </button>
         </>
       ) : (
         <>
           <div>ログイン済み: {current?.name}</div>
           <button type="button" onClick={handleLogout}>
-            Logout
+            ログアウト
           </button>
           <h2>サービスプロバイダ一覧</h2>
           <ul>
@@ -131,7 +134,7 @@ function App() {
                       type="button"
                       onClick={() => handleSamlLogin(sp.id)}
                     >
-                      SAMLレスポンスの
+                      SAMLレスポンスを取得
                     </button>
                   </li>
                 ))}
@@ -143,7 +146,21 @@ function App() {
               <h2>SAMLレスポンス</h2>
               {samlResponse && (
                 <>
-                  <div>エンドポイント: {samlResponse.result.entityEndpoint}</div>
+                  <div>
+                    エンドポイント: {samlResponse.result.entityEndpoint}
+                  </div>
+                  <form
+                    target="_blank"
+                    method="post"
+                    action={samlResponse.result.entityEndpoint}
+                  >
+                    <input
+                      type="hidden"
+                      name="SAMLResponse"
+                      value={samlResponse.result.context}
+                    ></input>
+                    <input type="submit" value="SAMLレスポンスを送信"></input>
+                  </form>
                   <CopyBlock
                     text={formatContext}
                     language="xml"

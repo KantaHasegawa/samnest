@@ -9,9 +9,13 @@
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js",
+        "${workspaceFolder}/node_modules/**/*.js"
+      ],
       "envFile": "${workspaceFolder}/.env",
       "cwd": "${workspaceRoot}",
-      "console": "integratedTerminal",
+      "console": "integratedTerminal"
     }
   ]
 }

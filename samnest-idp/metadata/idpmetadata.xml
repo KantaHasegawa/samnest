@@ -1,6 +1,6 @@
 <EntityDescriptor ID="SMa4fd5378c57fa016d03c6b27a8e0cf6f99ed2073b" entityID="https://idp.samnest-idp.com/metadata"
  xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-    <IDPSSODescriptor
+    <IDPSSODescriptor WantAuthnRequestsSigned="true"
      ID="SM14a93e72cb19411b4fc4eec882c98b12dbf55cea68e"
      protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
         <KeyDescriptor use="signing">
@@ -11,8 +11,8 @@
                 </X509Data>
             </KeyInfo>
         </KeyDescriptor>
-        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:entity</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
