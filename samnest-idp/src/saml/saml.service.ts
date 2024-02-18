@@ -8,7 +8,7 @@ import {
   ServiceProviderInstance,
   setSchemaValidator,
 } from 'samlify';
-import * as validator from '@authenio/samlify-xsd-schema-validator';
+import * as validator from '@authenio/samlify-node-xmllint';
 import { User } from '../auth/auth.data';
 import { CreateSAMLResponseDTO } from './saml.createResponse.dto';
 import * as zlib from 'zlib';

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  idp-front:
+    build: ./samnest-idp-front
+    ports:
+      - "5173:5173"
+    command: npm run dev
+
+  sp-front:
+    build: ./samnest-sp-1-front
+    ports:
+      - "5174:5174"
+    command: npm run dev
+
+  idp:
+    build: ./samnest-idp
+    ports:
+      - "3000:3000"
+    command: npm run start:dev
+
+  sp:
+    build: ./samnest-sp-1
+    ports:
+      - "3001:3001"
+    command: npm run start:dev
