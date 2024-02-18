@@ -99,6 +99,9 @@ function App() {
         <title>認証基盤</title>
       </head>
       <h1>SAMLテスト 認証基盤</h1>
+      <div>Email: kanta@email.com password: password</div>
+      <div>Email: hasegawa@email.com password: password</div>
+      <div>上記のどちらかでログインできます</div>
       {!token ? (
         <>
           <div>

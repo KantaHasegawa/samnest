@@ -54,6 +54,9 @@ export function SpIniticatedLogin() {
     <>
       <h1>SAMLテスト 認証基盤</h1>
       <h2>SPIniticated ログインページ</h2>
+      <div>Email: kanta@email.com password: password</div>
+      <div>Email: hasegawa@email.com password: password</div>
+      <div>上記のどちらかでログインできます</div>
       <div>
         <label>Email</label>
         <input value={email} onChange={(e) => setEmail(e.target.value)} />
